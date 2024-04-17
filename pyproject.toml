@@ -2,7 +2,7 @@
 name = "savingsatoshi_bitcoin_rpcpy"
 version = "75.1.0"
 description = "faux bitcoin core for Saving Satoshi code challenges"
-authors = ["Matthew Zipkin <pinheadmz@gmail.com"]
+authors = ["Matthew Zipkin <pinheadmz@gmail.com>"]
 license = "MIT"
 packages = [{include = "bitcoin_rpcpy"}]
 
