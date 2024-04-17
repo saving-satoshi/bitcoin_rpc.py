@@ -6,8 +6,7 @@ from pathlib import Path
 
 class Bitcoin:
     def __init__(self):
-        dirpath = (Path(__file__) / ".." / ".." / "..").resolve()
-        with open(f"{dirpath / 'chainstate.json'}", "r") as file:
+        with open(f"{'chainstate.json'}", "r") as file:
             self.state = load(file)
 
     @staticmethod
