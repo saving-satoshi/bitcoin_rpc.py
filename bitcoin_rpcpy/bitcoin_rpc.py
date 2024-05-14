@@ -9,9 +9,7 @@ class Bitcoin:
         with open(f"{'chainstate.json'}", "r") as file:
             self.state = load(file)
 
-    @staticmethod
-    def rpc(method=None, params=None):
-        self = Bitcoin()
+    def rpc(self, method=None, params=None):
         if not method:
             raise Exception("First argument 'method' is required.\nExecute `rpc('help')` for help")
         if hasattr(self, method):
@@ -25,7 +23,7 @@ class Bitcoin:
 
     def help(self):
         return """
-Bitcoin Core v75.1.0
+Bitcoin Core v253.1.2
 RPC commands:
 
 getinfo
@@ -60,7 +58,7 @@ getblocksbyheight ( height )
 
     def getinfo(self):
         return {
-            "version": "Bitcoin Core v75.1.0",
+            "version": "Bitcoin Core v253.1.2",
             "blocks": int(max(list(self.state["blocks_by_height"].keys()))),
             "headers": int(max(list(self.state["blocks_by_height"].keys()))),
             "prune_height": int(min(list(self.state["blocks_by_height"].keys()))),
@@ -68,4 +66,3 @@ getblocksbyheight ( height )
             "difficulty": "3007592928481984.23",
             "peers": 23
         }
-
